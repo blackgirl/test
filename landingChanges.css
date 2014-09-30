@@ -45,7 +45,9 @@ And add class .hide (if there no):
 		width:100%;
 	}
 	div.div-sign-up-bottom-section {
-		top:90px;
+		/*top:90px;*/
+		bottom:0;
+		position:relative;
 	}
 	#invitation {
 		width: 100%;
