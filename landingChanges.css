@@ -204,3 +204,11 @@ And add class .hide (if there no):
 #invitation {
 	float: right;
 }
+#signUpGrid {
+	overflow-y: hidden;
+}
+#signUpGrid .connect {
+	background: none;
+	margin-top: 0;
+	height:auto;
+}
