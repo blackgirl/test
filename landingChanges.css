@@ -7,6 +7,7 @@ body, html {
 body {
 	overflow-x: hidden;
 	overflow-y: hidden;
+	background-color: none;
 }
 .hide {
 	display:none !important;
@@ -200,7 +201,7 @@ And add class .hide (if there no):
 	}
 }
 .div-sign-up-bottom-section {
-	top: 0;
+	/*top: 0;*/
 }
 #invitation {
 	float: right;
