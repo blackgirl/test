@@ -125,7 +125,7 @@ And add class .hide (if there no):
 
 	#signUpGrid .alrd {
 		padding-right: 10px;
-		padding-top: 20px;
+		padding-top: 60px;
 	}
 	#signUpGrid .alrd > :last-child {
 		width:100%;
