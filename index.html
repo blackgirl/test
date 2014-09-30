@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+
+<html class="">
+    <head>
+    <title>
+        Swapcast
+    </title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/Layout.css" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/main.css" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/Style.css" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/TopMenu.css" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/Buttons.css" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/HomeStyle.css" />
+    <link rel="stylesheet" href="http://apps.swapcast.com//Content/swapcast/modal.css" />
+    <script src="http://apps.swapcast.com//Scripts/jquery-2.1.0.min.js"></script>
+    <script src="http://apps.swapcast.com//Scripts/knockout-3.1.0.js"></script>
+    <script src="http://apps.swapcast.com//Scripts/knockout.mapping-latest.js"></script>
+    <link rel="stylesheet" href="landingChanges.css" />
+
+    <script>
+        $(function () {
+            function ViewModel() {
+                var self = this;
+
+                self.loginData = {
+                    Email: ko.observable(null),
+                    Password: ko.observable(null)
+                };
+                self.registerData = {
+
+                    UserPassword: ko.observable(null),
+                    FirstName: ko.observable(null),
+                    LastName: ko.observable(null),
+                    Email: ko.observable(null)
+                };
+
+                self.registerAccont = function () {
+                    console.log(ko.mapping.toJS(self.registerData));
+                    $.ajax({
+                        url: '/PublishLink/SignUp',
+                        type: "POST",
+                        data: {
+                            request: ko.mapping.toJSON(self.registerData),
+                            linkId: 'b687a60f-e9bb-48ad-980d-b8a47c1931e0'
+                        },
+                        success: function (result) {
+                            if (result)
+                                window.location = result;
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+
+                    });
+                };
+                self.login = function () {
+                    //var win = window.open('http://google.com/', '_blank');
+                    $.ajax({
+                        url: '/PublishLink/SignIn',
+                        type: "POST",
+                        data: {
+                            request: ko.mapping.toJSON(self.loginData),
+                            linkId: 'b687a60f-e9bb-48ad-980d-b8a47c1931e0'
+                        },
+                        success: function (result) {
+                            if (result) {
+                                window.location = result;
+                                //var win = window.open(result, '_blank');
+                                //win.focus();
+
+                                //window.location = '/WebApp/default.html';
+                                //window.focus();
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    });
+                };
+
+                self.showSignIn = function () {
+                    $('#signInModal').show();
+                };
+                self.hideSignIn = function () {
+                    $('#signInModal').hide();
+                };
+                return self;
+            };
+            $('#signInModal').hide();
+            var model = new ViewModel();
+            ko.applyBindings(model, document.getElementById("body"));
+
+        });
+    </script>
+    <style>
+
+    </style>
+</head>
+<body id="body">
+    
+<div class="container-body">
+    <div ng-controller="authController" id="signUpGrid" data-ng-include="" data-src="'views/auth/signUpModal.html'" class="">
+        <div class="wrapperland ">
+            <div class="div-sign-up-logo">
+            </div>
+            <div class="div-sign-up-bottom-section">
+                <div ng-switch="showLoginProcessArea()">
+                    <!-- ngSwitchWhen: false -->
+                    <!-- ngSwitchWhen: true -->
+                    <div ng-switch-when="false" class="">
+                        <div class="content-form">
+                            <div id="invitation">
+                                <p>
+                                    <span>Your friend invited you to enter Swapcast.</span><br />
+                                    <span>There we can surf, chat, watch and share links together.</span>
+                                </p>
+                                <p class="sign-up-download hide d-hide">Registration is successful!</p>
+                                <h3 class="sign-up-page">Sign up now!</h3>
+                                <h3 class="sign-up-download d-hide">Download now!</h3>
+                                <div class="clear-both"></div>
+                                <div class="div-sign-up-download-other-clients sign-up-download d-hide">
+                                    <a href="https://itunes.apple.com/us/app/swapcast/id884240791?ls=1&amp;mt=8" title="App Store"><img src="http://apps.swapcast.com//Content/images/invitation/btn_appstore.png" alt="Apple App Store" class="preserve"></a>
+                                    <a href="https://play.google.com/store/apps/details?id=com.swapcast" title="Google Play"><img src="http://apps.swapcast.com//Content/images/invitation/btn_googleplay.png" alt="Google Play" class="preserve"></a>
+                                    <div class="clear-both">&nbsp;</div>
+                                </div>
+                                <div class="sign-up-page user-info">
+                                    <div class="image">
+                                        <img src="http://apps.swapcast.com/Image/Get/3a05f202-65e9-4e8d-9394-7ac0a9506b1c" alt="Andrew aaa" />
+                                    </div>
+                                    <div class="personal">
+                                        <h3>Andrew aaa</h3>
+                                        <div class="link-wrapper">
+                                            <div class="link">
+                                                <a href="#" target="_black">12345</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="clear-both"></div>
+                                </div>
+                                <div class="clear-both"></div>
+                            </div>
+                            <div class="sign-up-page div-sign-up-form">
+                                <div class="form-row">
+                                    <input type="text" class="form-control inputs " placeholder="First name" required="" data-bind="value: registerData.LastName ">
+
+                                    <input type="text" class="form-control inputs " placeholder="Last name" required="" data-bind="value: registerData.FirstName">
+
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-row">
+                                    <input type="text" class="form-control inputs " data-bind="value: registerData.Email " placeholder="Email" required="">
+
+                                    <input type="password" class="form-control inputs " data-bind="value: registerData.UserPassword " placeholder="Password" required="">
+
+                                    <div class="mark"><div class="check-point"></div> By joining Swapcast you agree to our Terms of Service</div>
+
+                                    <div class="clear-both">&nbsp;</div>
+                                </div>
+                                <div>
+                                    <div class="button join" data-bind="click: registerAccont">Join</div>
+                                    <div class="clear-both">&nbsp;</div>
+                                </div>
+                            </div>
+                            <div class="clear-both">&nbsp;</div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="sign-up-page connect">
+                    <div class="alrd">
+                        <div>Already have an account?</div>
+                    </div>
+                    <div>
+                        <div class="div-sign-up-download-other-clients">
+                            <a class="hide" href="https://itunes.apple.com/us/app/swapcast/id884240791?ls=1&amp;mt=8" title="App Store"><img src="http://apps.swapcast.com//Content/images/invitation/btn_appstore.png" alt="Apple App Store" class="preserve"></a>
+                            <a class="hide" href="https://play.google.com/store/apps/details?id=com.swapcast" title="Google Play"><img src="http://apps.swapcast.com//Content/images/invitation/btn_googleplay.png" alt="Google Play" class="preserve"></a>
+                            <div class="desktop" ng-click="downloadDesktopClient()"></div>
+                            <div class="mobile" ng-click="downloadMobileClient()"></div>
+                            <div class="clear-both">&nbsp;</div>
+                        </div>
+                        <div class="connect-buttons">
+                            <div class="login button btn-block btn-primary" data-dismiss="modal" data-bind="click: showSignIn">Log in</div>
+                            <div href="#" class="button fb ">
+                                <a href="#" data-bind="click:loginfb">
+                                    <span class="facebook-icon"></span>Connect with FB
+                                </a>
+                            </div>
+                            <div class="button gplus ">
+                                <a href="#" data-bind="click:logingp">
+                                    <span class="googleplus-icon"></span>Connect with G+
+                                </a>
+                            </div>
+                            <div class="clear-both">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                <p class="about-swapcast hide">Swapcast is a simple way to keep in touch with friends, while you surf your favorite websites, watch your favorite videos, chat about what’s going on and share anything you want - all&nbsp;in&nbsp;one&nbsp;app.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- SignIn dialog -->
+<div class="modal fade in" align="left" id="signInModal" data-ng-include="" data-src="'views/auth/signInModal.html'" tabindex="-1" data-backdrop="static" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false" style="display: block;">
+    <div class="modal-dialog div-modal-dialog signin-modal-dialog ">
+        <div class="modal-content signin-modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true" data-bind="click: hideSignIn"></button>
+                <div>Sign In</div>
+            </div>
+            <div class="modal-body signin-modal-body">
+                <div class="signin-modal-input-container invalid-input" style="visibility: hidden;">
+                    Sorry: That email/password combination is not valid. Try again!
+                </div>
+                <div class="signin-modal-input-container">
+                    <input type="text" class="form-control " data-bind="value: loginData.Email " placeholder="Email" style="border: 1px solid rgb(204, 204, 204);">
+                </div>
+                <div class="signin-modal-input-container">
+                    <input type="password" class="form-control " data-bind="value: loginData.Password " placeholder="Password" style="border: 1px solid rgb(204, 204, 204);">
+                </div>
+                <div class="signin-modal-remember-me-container">
+                    <input type="checkbox">
+                    <label for="signInRemember">Remember me</label>
+                </div>
+                <div class="signin-modal-buttons-container">
+                    <button type="button" class="signin-modal-btn-signin" data-bind="click: login ">Log In</button>
+                    <button type="button" class="signin-modal-btn-cancel" data-dismiss="modal" data-bind="click: hideSignIn">Cancel</button>
+                </div>
+
+            </div>
+            <div class="signin-modal-footer">
+                <button type="button" ng-click="Functions.showSignUpDialog(false)" class="signin-modal-btn-signup" data-dismiss="modal">Sign Up</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>
