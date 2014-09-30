@@ -198,3 +198,9 @@ And add class .hide (if there no):
 		bottom:0;
 	}
 }
+.div-sign-up-bottom-section {
+	top: 0;
+}
+#invitation {
+	float: right;
+}
