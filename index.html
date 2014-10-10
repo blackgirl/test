@@ -252,13 +252,12 @@
         })
        .on('focus','input', function(event){
             console.log(event.type);
-            $('.wrapperland').scrollTop()
+            var w = $('.wrapperland').innerWidth();
+            $('.wrapperland').scrollTop(w);
         })
        .on('scroll', function(event){
             console.log(event.type);
             console.log($('.wrapperland').scrollTop());
-            var w = $('.wrapperland').innerWidth();
-            $('.wrapperland').scrollTop(w);
         })
        .on('change','.wrapperland', function(event){
             console.log(event.type);
