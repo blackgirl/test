@@ -253,7 +253,6 @@
        .on('focus','input', function(event){
             console.log(event.type);
             var w = $('.wrapperland').innerWidth();
-            w = $(this).scrollTop();
             $('.wrapperland').scrollTop(w);
         });
        // .on('scroll', function(event){
