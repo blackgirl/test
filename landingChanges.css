@@ -36,6 +36,7 @@ And add class .hide (if there no):
 - .sign-up-page.connect
 */
 @media screen and (max-width : 980px) {
+/*@media screen and (max-width : 980px) and (device-aspect-ratio: 40/71) {*/
 	.wrapperland {
 		background-image: url(bg1.jpg);
 		padding-top: 20px;
@@ -216,4 +217,24 @@ And add class .hide (if there no):
 	background: none;
 	margin-top: 0;
 	height:auto;
+}
+
+
+
+
+
+div.desktop, div.mobile {color:#ccc;}
+div.desktop:hover, div.mobile:hover {color:#fff;}
+div.desktop{padding-top: 35px;}
+div.mobile {padding-top: 36px;color:#ccc;}
+
+.div-sign-up-download-other-clients > .mobile:hover {
+	background-position: -154px -0px;
+}
+.div-sign-up-download-other-clients > .mobile:hover {
+	background-position: -154px -100px;}
+ div.desktop:hover { background-position: 0px 38px;}
+.div-sign-up-download-other-clients > .mobile, .div-sign-up-download-other-clients > .desktop {
+height: 40px;
+margin-bottom:15px;
 }
