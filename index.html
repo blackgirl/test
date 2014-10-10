@@ -245,7 +245,7 @@
         })
        .on('click','input', function(event){
             console.log(event.type);
-            $(this).focus().keydown();
+            $(this).focus();
             // console.log(event.type);
         })
        .on('keydown','input', function(event){
@@ -253,6 +253,7 @@
         })
        .on('focus','input', function(event){
             console.log(event.type);
+            $(this).keydown();
         })
        .on('change','input', function(event){
             // console.log(event.type);
