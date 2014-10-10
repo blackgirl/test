@@ -42,8 +42,6 @@ And add class .hide (if there no):
 		padding-top: 20px;
 		overflow-x: hidden;
 		background-position: bottom;
-		position:absolute;
-bottom:0;
 	}
 	div.div-sign-up-logo {
 		width:100%;
