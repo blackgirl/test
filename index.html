@@ -239,7 +239,7 @@
 </div>
 
 <script>
-    $(document).on({'focus','select','click','change','input', function(event){
+    $('input').on({'focus','select','click','change', function(event){
         console.log(event.type);
         // console.log(event.target);
     });
