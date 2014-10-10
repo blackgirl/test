@@ -244,8 +244,8 @@
             console.log(event.type);
         })
        .on('click','input', function(event){
-            $(this).keydown();
             console.log(event.type);
+            $(this).focus().keydown();
             // console.log(event.type);
         })
        .on('keydown','input', function(event){
