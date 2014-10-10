@@ -245,7 +245,7 @@
         })
        .on('click','input', function(event){
             console.log(event.type);
-            $(this).trigger('change');
+            $(this).trigger("keypress");
             console.log(event.type);
         })
        .on('mouseleave','input', function(event){
