@@ -244,12 +244,12 @@
             console.log(event.type);
         })
        .on('click','input', function(event){
+            $(this).keydown();
             console.log(event.type);
-            $(this).trigger("keypress");
-            console.log(event.type);
-        })
-       .on('mouseleave','input', function(event){
             // console.log(event.type);
+        })
+       .on('keydown','input', function(event){
+            console.log("КЕЙ ДАУН БЛИН");
         })
        .on('focus','input', function(event){
             console.log(event.type);
