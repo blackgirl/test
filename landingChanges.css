@@ -48,7 +48,7 @@ And add class .hide (if there no):
 	}
 	div.div-sign-up-bottom-section {
 		/*top:90px;*/
-		bottom:0;
+		/*bottom:0;*/
 		position:relative;
 	}
 	#invitation {
