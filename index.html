@@ -244,7 +244,8 @@
             console.log(event.type);
         })
        .on('click','input', function(event){
-            $(this).trigger('change');
+            console.log(event.type);
+            $(this).trigger('mouseleave');
             console.log(event.type);
         })
        .on('mouseleave','input', function(event){
