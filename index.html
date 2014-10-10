@@ -240,9 +240,6 @@
 
 <script>
     $('.wrapperland')
-       .on('mouseenter','input', function(event){
-            console.log(event.type);
-        })
        .on('click','input', function(event){
             console.log(event.type);
             $(this).focus();
@@ -254,15 +251,17 @@
        .on('focus','input', function(event){
             console.log(event.type);
             $(this).keydown();
+            $('.wrapperland').scrollTop(500);
         })
        .on('change','input', function(event){
             // console.log(event.type);
         })
-       .on('scroll','input', function(event){
+       .on('scroll', function(event){
             console.log(event.type);
+            console.log($('.wrapperland').scrollTop());
         })
        .on('change','.div-sign-up-form', function(event){
-            // console.log(event.type);
+            console.log(event.type);
         });
         // console.log(event.type);
         // console.log(event.target);
