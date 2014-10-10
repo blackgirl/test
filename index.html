@@ -245,23 +245,23 @@
         })
        .on('click','input', function(event){
             console.log(event.type);
-            $(this).trigger('mouseleave');
+            $(this).trigger('change');
             console.log(event.type);
         })
        .on('mouseleave','input', function(event){
-            console.log(event.type);
+            // console.log(event.type);
         })
        .on('focus','input', function(event){
             console.log(event.type);
         })
        .on('change','input', function(event){
-            console.log(event.type);
+            // console.log(event.type);
         })
-       .on('scroll','.div-sign-up-form', function(event){
+       .on('scroll','input', function(event){
             console.log(event.type);
         })
        .on('change','.div-sign-up-form', function(event){
-            console.log(event.type);
+            // console.log(event.type);
         });
         // console.log(event.type);
         // console.log(event.target);
