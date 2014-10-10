@@ -243,6 +243,7 @@
        .on('click','input', function(event){
             console.log(event.type);
             $(this).focus();
+            $(this).focusin();
             // console.log(event.type);
         })
        .on('keydown','input', function(event){
@@ -250,8 +251,7 @@
         })
        .on('focus','input', function(event){
             console.log(event.type);
-            $(this).focusin();
-            
+            $('.wrapperland').scrollTop()
         })
        .on('change','input', function(event){
             // console.log(event.type);
@@ -259,6 +259,7 @@
        .on('scroll', function(event){
             console.log(event.type);
             console.log($('.wrapperland').scrollTop());
+            console.log($('.div-sign-up-form').scrollTop());
         })
        .on('change','.div-sign-up-form', function(event){
             console.log(event.type);
