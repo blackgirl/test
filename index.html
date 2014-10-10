@@ -242,26 +242,27 @@
     $('.wrapperland')
        .on('click','input', function(event){
             console.log(event.type);
-            $(this).focus();
-            $(this).focusin();
+            // $(this).focus();
+            // $(this).focusin();
             // console.log(event.type);
         })
-       .on('keydown','input', function(event){
-            console.log("КЕЙ ДАУН БЛИН");
-            console.log($('.wrapperland').scrollTop());
-        })
+       // .on('keydown','input', function(event){
+       //      console.log("КЕЙ ДАУН БЛИН");
+       //      console.log($('.wrapperland').scrollTop());
+       //  })
        .on('focus','input', function(event){
             console.log(event.type);
             var w = $('.wrapperland').innerWidth();
+            w = w - $(this).innerHeight();
             $('.wrapperland').scrollTop(w);
-        })
-       .on('scroll', function(event){
-            console.log(event.type);
-            console.log($('.wrapperland').scrollTop());
-        })
-       .on('change','.wrapperland', function(event){
-            console.log(event.type);
         });
+       // .on('scroll', function(event){
+       //      console.log(event.type);
+       //      console.log($('.wrapperland').scrollTop());
+       //  })
+       // .on('change','.wrapperland', function(event){
+       //      console.log(event.type);
+       //  });
         // console.log(event.type);
         // console.log(event.target);
     // });
